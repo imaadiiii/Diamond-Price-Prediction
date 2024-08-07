@@ -56,5 +56,5 @@ def predict_datapoint():
 # Main block to run the application
 if __name__ == '__main__':
     DEBUG_MODE = os.environ.get('DEBUG_MODE', 'False').lower() == 'true'
-    PORT = int(os.environ.get('PORT', 5002))
+    PORT = int(os.environ.get('PORT', 5040))
     app.run(debug=DEBUG_MODE, host='0.0.0.0', port=PORT)
