@@ -6,6 +6,10 @@ This project develops a machine learning model to predict diamond prices based o
 
 ```
 Diamond-Price-Predictor/
+├── ScreenShot/              # Directory containing screenshots of the application
+│   ├── SS1.png
+│   ├── SS2.png
+│   ├── SS3.png
 ├── artifacts/
 │   ├── model.pkl            # Trained model
 │   ├── preprocessor.pkl     # Preprocessing pipeline
@@ -26,10 +30,6 @@ Diamond-Price-Predictor/
 ├── templates/
 │   ├── form.html            # HTML form for input data
 │   ├── index.html           # Main page of the web application
-├── ScreenShot/              # Directory containing screenshots of the application
-│   ├── SS1.png
-│   ├── SS2.png
-│   ├── SS3.png
 ├── .gitignore               # Specifies intentionally untracked files to ignore
 ├── README.md                # README file for project documentation
 ├── application.py           # Flask application entry point
