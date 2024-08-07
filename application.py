@@ -1,9 +1,8 @@
-import os
 from flask import Flask, request, render_template, jsonify
 from src.pipelines.prediction_pipeline import CustomData, PredictPipeline
 
 # Initialize the Flask application
-application = Flask(__name__)
+application = Flask(_name_)
 app = application
 
 # Route for the home page
@@ -18,18 +17,15 @@ def predict_datapoint():
         # Render the prediction form
         return render_template('form.html')
     else:
-        # Validate and extract data from form submission
+        # Extract data from form submission
         try:
-            if not all([request.form.get(field) for field in ['carat', 'depth', 'table', 'x', 'y', 'z', 'cut', 'color', 'clarity']]):
-                return render_template('form.html', error="All fields are required.")
-
             data = CustomData(
-                carat=float(request.form.get('carat')),
-                depth=float(request.form.get('depth')),
-                table=float(request.form.get('table')),
-                x=float(request.form.get('x')),
-                y=float(request.form.get('y')),
-                z=float(request.form.get('z')),
+                carat=float(request.form.get('carat', 0)),
+                depth=float(request.form.get('depth', 0)),
+                table=float(request.form.get('table', 0)),
+                x=float(request.form.get('x', 0)),
+                y=float(request.form.get('y', 0)),
+                z=float(request.form.get('z', 0)),
                 cut=request.form.get('cut'),
                 color=request.form.get('color'),
                 clarity=request.form.get('clarity')
@@ -40,21 +36,14 @@ def predict_datapoint():
             predict_pipeline = PredictPipeline()
             # Make prediction
             pred = predict_pipeline.predict(final_new_data)
-            results = f"Predicted Price: ${round(pred[0], 2)}"
+            results = round(pred[0], 2)
         except Exception as e:
-            # Log the error and return a generic error message
-            results = "An error occurred during the prediction process. Please try again."
+            # Handle errors during form processing or prediction
+            results = f"Error: {str(e)}"
         
         # Render the form again with the results
         return render_template('form.html', final_result=results)
 
 # Main block to run the application
-if __name__ == '__main__':
-    # Check if running on a controlled environment (like Heroku or Streamlit)
-    if os.environ.get('MANAGED_ENVIRONMENT', 'False').lower() == 'true':
-        app.run(debug=False)  # Let the managed environment set port and host
-    else:
-        DEBUG_MODE = os.environ.get('DEBUG_MODE', 'False').lower() == 'true'
-        PORT = int(os.environ.get('PORT', 5040))  # Default port if not specified
-        app.run(debug=DEBUG_MODE, host='0.0.0.0', port=PORT)
-
+if _name_ == '_main_':
+    app.run(debug=True, host='0.0.0.0', port=5002)  # Change to port 5002
