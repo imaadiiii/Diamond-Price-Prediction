@@ -1,10 +1,6 @@
+import os
 from flask import Flask, request, render_template, jsonify
 from src.pipelines.prediction_pipeline import CustomData, PredictPipeline
-import os
-import logging
-
-# Setup basic configuration for logging
-logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
 
 # Initialize the Flask application
 application = Flask(__name__)
@@ -47,7 +43,6 @@ def predict_datapoint():
             results = f"Predicted Price: ${round(pred[0], 2)}"
         except Exception as e:
             # Log the error and return a generic error message
-            logging.error(f"Error during prediction: {str(e)}")
             results = "An error occurred during the prediction process. Please try again."
         
         # Render the form again with the results
@@ -55,6 +50,11 @@ def predict_datapoint():
 
 # Main block to run the application
 if __name__ == '__main__':
-    DEBUG_MODE = os.environ.get('DEBUG_MODE', 'False').lower() == 'true'
-    PORT = int(os.environ.get('PORT', 5040))
-    app.run(debug=DEBUG_MODE, host='0.0.0.0', port=PORT)
+    # Check if running on a controlled environment (like Heroku or Streamlit)
+    if os.environ.get('MANAGED_ENVIRONMENT', 'False').lower() == 'true':
+        app.run(debug=False)  # Let the managed environment set port and host
+    else:
+        DEBUG_MODE = os.environ.get('DEBUG_MODE', 'False').lower() == 'true'
+        PORT = int(os.environ.get('PORT', 5040))  # Default port if not specified
+        app.run(debug=DEBUG_MODE, host='0.0.0.0', port=PORT)
+
