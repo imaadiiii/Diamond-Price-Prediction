@@ -74,6 +74,9 @@ Here are some screenshots of the application:
 
 ![ScreenShot 1](ScreenShot/SS1.png)
 ![ScreenShot 2](ScreenShot/SS2.png)
+
+Output 
+
 ![ScreenShot 3](ScreenShot/SS3.png)
 
 ## Contributing
