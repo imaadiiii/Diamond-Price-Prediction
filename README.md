@@ -5,7 +5,7 @@ This project develops a machine learning model to predict diamond prices based o
 ## Project Structure
 
 ```
-Diamond-Price-Prediction/
+Diamond-Price-Predictor/
 ├── artifacts/
 │   ├── model.pkl            # Trained model
 │   ├── preprocessor.pkl     # Preprocessing pipeline
@@ -26,6 +26,10 @@ Diamond-Price-Prediction/
 ├── templates/
 │   ├── form.html            # HTML form for input data
 │   ├── index.html           # Main page of the web application
+├── ScreenShot/              # Directory containing screenshots of the application
+│   ├── SS1.png
+│   ├── SS2.png
+│   ├── SS3.png
 ├── .gitignore               # Specifies intentionally untracked files to ignore
 ├── README.md                # README file for project documentation
 ├── application.py           # Flask application entry point
@@ -39,11 +43,11 @@ To set up this project locally, follow these steps:
 
 1. Clone the repository:
    ```
-   git clone https://github.com/imaadiiii/Diamond-Price-Prediction.git
+   git clone https://github.com/your-username/Diamond-Price-Predictor.git
    ```
 2. Navigate to the project directory:
    ```
-   cd Diamond-Price-Prediction
+   cd Diamond-Price-Predictor
    ```
 3. Install dependencies:
    ```
@@ -66,10 +70,11 @@ Visit `http://127.0.0.1:5002` to access the application.
 
 ## Screenshots
 
-Screenshots of the application can be found in the `ScreenShot` directory:
-- SS1.png
-- SS2.png
-- SS3.png
+Here are some screenshots of the application:
+
+![ScreenShot 1](ScreenShot/SS1.png)
+![ScreenShot 2](ScreenShot/SS2.png)
+![ScreenShot 3](ScreenShot/SS3.png)
 
 ## Contributing
 
@@ -77,14 +82,11 @@ Contributions are welcome. Please open an issue first to discuss what you would 
 
 Please make sure to update tests as appropriate.
 
+## About the Creator
+
+This project was developed by **Aditya Raj**, a passionate software developer and data science enthusiast. Aditya has a keen interest in machine learning, data analysis, and building intuitive and impactful software solutions. For more projects and collaborations, reach out via [LinkedIn]([https://www.linkedin.com/in/aditya-raj-05411b21a/]).
+
 ## License
 
 [MIT](https://choosealicense.com/licenses/mit/)
-```
-
-### Notes on the README
-- **Installation and Usage:** Clear instructions help users set up and start the application.
-- **Project Structure:** Detailed breakdown of directories and files helps users navigate the project.
-- **Features and Screenshots:** Highlights the main features and visual representation of the application.
-- **Contributing and License:** Encourages contributions and notes the license.
 
