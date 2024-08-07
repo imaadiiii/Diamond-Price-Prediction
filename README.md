@@ -87,7 +87,7 @@ Please make sure to update tests as appropriate.
 
 ## About the Creator
 
-This project was developed by **Aditya Raj**, a passionate software developer and data science enthusiast. Aditya has a keen interest in machine learning, data analysis, and building intuitive and impactful software solutions. For more projects and collaborations, reach out via [LinkedIn]([https://www.linkedin.com/in/aditya-raj-05411b21a/]).
+This project was developed by **Aditya Raj**, a passionate software developer and data science enthusiast. Aditya has a keen interest in machine learning, data analysis, and building intuitive and impactful software solutions. For more projects and collaborations, reach out via [LinkedIn](https://www.linkedin.com/in/aditya-raj-05411b21a/).
 
 ## License
 
